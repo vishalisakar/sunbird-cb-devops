@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  become: yes
+  strategy: free
+  vars_files:
+    - "{{inventory_dir}}/vars.yml"
+  roles:
+    - role: deploy-ui-spv-igot
+      tags: [deploy-ui-spv-igot]
