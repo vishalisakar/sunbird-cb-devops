@@ -3,3 +3,4 @@ service_ui_spv_igot_port: 3044
 network_alias_ui_spv_igot_service: ui-spv-igot
 image_ui_spv_igot: ui-spv-igot
 docker_hub_url: eagle-docker.tarento.com
+host_bulk_upload_path: /mydata/bulk_upload
