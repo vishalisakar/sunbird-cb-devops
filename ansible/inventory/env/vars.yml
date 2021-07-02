@@ -1,0 +1,4 @@
+service_ui_spv_igot_service: ui-spv-igot
+service_ui_spv_igot_port: 3044
+network_alias_ui_spv_igot_service: ui-spv-igot
+image_ui_spv_igot: ui-spv-igot
