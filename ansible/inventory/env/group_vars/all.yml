@@ -357,3 +357,7 @@ image_vega_redis_service: tarentonxt/vega
 health_end_point_sb_ext_service: "http://localhost:{{ service_sb_ext_port }}/v1/latest/terms/user"
 elasticsearch_hosts_list: "{{ elasticsearch_http_hosts_list | map('regex_replace','^(?P<host>.+):(?P<port>\\d+)$', '\\g<host>') | list | join (',') }}"
 elasticsearch_ports_list: "{{ elasticsearch_http_hosts_list | map('regex_replace','^(?P<host>.+):(?P<port>\\d+)$', '\\g<port>') | list | join(',') }}"
+
+#####################bulk-upload-spv#########
+host_bulk_upload: /mydata/bulk_upload
+helm_file_location: /var/lib/jenkins/workspace/Deploy/dev/igot/ui-spv/kubernetes/helm_charts/igot-deploy/ui-spv-igot
