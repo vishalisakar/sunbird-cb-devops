@@ -1,0 +1,27 @@
+server.port={{ service_pm_analytics_port }}
+
+spring.datasource.url=jdbc:mysql://{{ mysql_host }}:3306/database
+spring.datasource.username={{ mysql_username }}
+spring.datasource.password={{ mysql_password }}
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+#----------------------------- ELASTIC SEARCH CONFIGURATIONS ------------------------------#
+services.esindexer.primary.host=http://{{ elasticsearch_host }}:{{ elasticsearch_http_port }}/
+services.esindexer.primary.host.name={{ elasticsearch_host }}
+services.esindexer.primary.host.port={{ elasticsearch_http_port }}
+services.esindexer.secondary.host=http://{{esindexer_secondary_service_host_name}}:{{esindexer_secondary_host_port}}/
+services.esindexer.secondary.host.name={{esindexer_secondary_service_host_name}}:{{esindexer_secondary_host_port}}
+services.esindexer.secondary.host.port={{esindexer_secondary_host_port}}
+services.esindexer.ternary.host=http://{{esindexer.ternary.host}}/
+services.esindexer.ternary.host.name={{esindexer.ternary.host}}
+services.esindexer.ternary.host.port={{ elasticsearch_http_port }}
+services.esindexer.username={{ elasticsearch_username }}
+services.esindexer.password={{ elasticsearch_password }}
+es.index.name=_transaction
+es.document.type=transaction
+es.target.index.name=store_target
+es.target.document.type=storeTarget
+config.schema.paths=classpath*:schema/*.json
+
+

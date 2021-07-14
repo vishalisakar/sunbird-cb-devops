@@ -87,6 +87,7 @@ service_vega_console_service: vega-console-service
 service_wat_sourcing_web_service: wat-sourcing-web-service
 service_wat_sourcing_service: wat-sourcing-service
 service_vega_redis_service: vega-redis-service
+service_vega_web_service: vega-web-service
 
 
 # Ports
@@ -112,8 +113,8 @@ service_catalog_port: 3000
 service_telemetry_port: 9001
 service_ui_proxies_port: 9001
 service_ui_static_port: 3002
-service_ui_proxies_fusion_port:
-service_ui_static_fusion_port:
+service_ui_proxies_fusion_port: 
+service_ui_static_fusion_port: 
 service_support_api_port: 3005
 service_sb_telemetry_port: 8091
 service_sb_telemetry_port: 9001
@@ -172,11 +173,11 @@ service_vega_rasa_action_sandbox_port: 5055
 service_vega_rasa_nlp_igot_port: 5005
 service_vega_rasa_nlp_sandbox_port: 5005
 service_vega_router_port: 4005
-service_vega_console_port: 4000
+service_vega_console_port: 8081
 service_wat_sourcing_web_port: 5000
-service_wat_sourcing_port: 8081
+service_wat_sourcing_port: 5000
 service_vega_redis_port: 6379
-
+service_vega_web_port: 3000
 
 
 # Network alias names, so that one service can talk to another
@@ -269,6 +270,7 @@ network_alias_vega_console_service: vega-console-service
 network_alias_wat_sourcing_web_service: wat-sourcing-web-service
 network_alias_wat_sourcing_service: wat-sourcing-service
 network_alias_vega_redis_service: vega-redis-service
+network_alias_vega_web_service: vega-web-service
 
 
 
@@ -352,11 +354,14 @@ image_vega_console_service: vega-console-service
 image_wat_sourcing_web_service: wat-sourcing-web-service
 image_wat_sourcing_service: wat-sourcing-service
 image_vega_redis_service: tarentonxt/vega
+image_vega_web_service: vega-web-service
 
 
 health_end_point_sb_ext_service: "http://localhost:{{ service_sb_ext_port }}/v1/latest/terms/user"
 elasticsearch_hosts_list: "{{ elasticsearch_http_hosts_list | map('regex_replace','^(?P<host>.+):(?P<port>\\d+)$', '\\g<host>') | list | join (',') }}"
 elasticsearch_ports_list: "{{ elasticsearch_http_hosts_list | map('regex_replace','^(?P<host>.+):(?P<port>\\d+)$', '\\g<port>') | list | join(',') }}"
+
+
 
 #####################bulk-upload-spv#########
 host_bulk_upload: /mydata/bulk_upload
