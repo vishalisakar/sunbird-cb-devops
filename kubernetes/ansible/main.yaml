@@ -6,8 +6,12 @@
     - "{{inventory_dir}}/group_vars/all.yml"
     - "{{inventory_dir}}/common.yml"
   roles:
-    - role: deploy-antivirus-service
-      tags: [deploy-antivirus-service]
+
     - role: deploy-ui-spv-igot
       tags: [deploy-ui-spv-igot]
+    - role: deploy-ui-proxies-service
+      tags: [deploy-ui-proxies-service]
+    - role: deploy-ui-static
+      tags: [deploy-ui-static]
+
  
