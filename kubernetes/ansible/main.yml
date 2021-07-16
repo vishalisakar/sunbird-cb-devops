@@ -1,0 +1,13 @@
+---
+- hosts: local
+  become: yes
+  strategy: free
+  vars_files:
+    - "{{inventory_dir}}/group_vars/all.yml"
+    - "{{inventory_dir}}/common.yml"
+  roles:
+    - role: deploy-antivirus-service
+      tags: [deploy-antivirus-service]
+    - role: deploy-ui-spv-igot
+      tags: [deploy-ui-spv-igot]
+ 
