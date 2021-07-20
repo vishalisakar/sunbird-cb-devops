@@ -29,7 +29,7 @@
       tags: [deploy-ui-mdo-igot]
     - role: deploy-ui-spv-igot
       tags: [deploy-ui-spv-igot]
-	- role: deploy-frac-backend-service
+    - role: deploy-frac-backend-service
       tags: [deploy-frac-backend-service]
     - role: deploy-frac-web-service
       tags: [deploy-frac-web-service]
