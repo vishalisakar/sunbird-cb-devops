@@ -31,14 +31,14 @@
       tags: [deploy-ui-spv-igot]
     - role: deploy-frac-backend-service
       tags: [deploy-frac-backend-service]
-    - role: deploy-frac-web-service
-      tags: [deploy-frac-web-service]
+    - role: deploy-frac-web-portal
+      tags: [deploy-frac-web-portal]
     - role: deploy-frac-collab-service
       tags: [deploy-frac-collab-service]
     - role: deploy-profanity-image-moderation-service
       tags: [deploy-profanity-image-moderation-service]
-    - role: deploy-pm-web-service
-      tags: [deploy-pm-web-service]
+    - role: deploy-pm-web-portal
+      tags: [deploy-pm-web-portal]
     - role: deploy-pm-analytics-service
       tags: [deploy-pm-analytics-service]
     - role: deploy-pm-zuul-service
@@ -49,8 +49,8 @@
       tags: [deploy-ui-cbc-igot]
     - role: deploy-pm-microsurvey-service
       tags: [deploy-pm-microsurvey-service]
-    - role: deploy-pm-microsurvey-web-service
-      tags: [deploy-pm-microsurvey-web-service]
+    - role: deploy-pm-microsurvey-web-portal
+      tags: [deploy-pm-microsurvey-web-portal]
     - role: deploy-content-tagging-service
       tags: [deploy-content-tagging-service]
     - role: deploy-vega-compiler-service
@@ -65,11 +65,11 @@
       tags: [deploy-vega-rasa-nlp-sandbox-service]
     - role: deploy-vega-router-service
       tags: [deploy-vega-router-service]
-    - role: deploy-wat-sourcing-web-service
-      tags: [deploy-wat-sourcing-web-service]
+    - role: deploy-wat-sourcing-web-portal
+      tags: [deploy-wat-sourcing-web-portal]
     - role: deploy-vega-console-service
       tags: [deploy-vega-console-service]
     - role: deploy-wat-sourcing-service
       tags: [deploy-wat-sourcing-service]
-    - role: deploy-vega-web-service
-      tags: [deploy-vega-web-service]
+    - role: deploy-vega-web-portal
+      tags: [deploy-vega-web-portal]
