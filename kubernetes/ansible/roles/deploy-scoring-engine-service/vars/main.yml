@@ -41,15 +41,15 @@ spring_data_mongodb_database: telemetry
 spring_data_cassandra_bodhi_startupTimeoutInSeconds: 100
 
 
-pyeval_server_ip: {{pyeval_server_ip}}
-pyeval_server_port: {{pyeval_server_port}}
+pyeval_server_ip: "{{ pyeval_server_ip }}"
+pyeval_server_port: "{{ pyeval_server_port }}"
 pyeval_service_name: /PyEval6/
 
-iap_server_ip: {{iap_server_ip}}
-iap_server_port: {{iap_server_port}}
+iap_server_ip: "{{ iap_server_ip }}"
+iap_server_port: "{{ iap_server_port }}"
 iap_verification_service: /verify/
 
-log_access_key: {{ log_access_key }}
+log_access_key: "{{ log_access_key }}"
 
 lhub_url: "{{ var_scoring_engine_learning_hub_url }}"
 lhub_certifaction_url: "{{ var_scoring_engine_learning_hub_certification_url }}"
