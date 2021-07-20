@@ -29,10 +29,10 @@
       tags: [deploy-ui-mdo-igot]
     - role: deploy-ui-spv-igot
       tags: [deploy-ui-spv-igot]
-    - role: deploy-frac-backend-service
-      tags: [deploy-frac-backend-service]
-    - role: deploy-frac-web-service
-      tags: [deploy-frac-web-service]
+  #  - role: deploy-frac-backend-service
+  #    tags: [deploy-frac-backend-service]
+  #  - role: deploy-frac-web-service
+  #    tags: [deploy-frac-web-service]
     - role: deploy-frac-collab-service
       tags: [deploy-frac-collab-service]
     - role: deploy-profanity-image-moderation-service
@@ -48,29 +48,28 @@
     - role: deploy-ui-cbc-igot
       tags: [deploy-ui-cbc-igot]
     - role: deploy-pm-microsurvey-service
-      tags: deploy-pm-microsurvey-service
+      tags: [deploy-pm-microsurvey-service]
     - role: deploy-pm-microsurvey-web-service
-      tags: deploy-pm-microsurvey-web-service
+      tags: [deploy-pm-microsurvey-web-service]
     - role: deploy-content-tagging-service
-      tags: deploy-content-tagging-service
+      tags: [deploy-content-tagging-service]
     - role: deploy-vega-compiler-service
-      tags: deploy-vega-compiler-service
+      tags: [deploy-vega-compiler-service]
     - role: deploy-vega-rasa-action-igot-service
-      tags: deploy-vega-rasa-action-igot-service
+      tags: [deploy-vega-rasa-action-igot-service]
     - role: deploy-vega-rasa-action-sandbox-service
-      tags: deploy-vega-rasa-action-sandbox-service
+      tags: [deploy-vega-rasa-action-sandbox-service]
     - role: deploy-vega-rasa-nlp-igot-service
-      tags: deploy-vega-rasa-nlp-igot-service
+      tags: [deploy-vega-rasa-nlp-igot-service]
     - role: deploy-vega-rasa-nlp-sandbox-service
-      tags: deploy-vega-rasa-nlp-sandbox-service
+      tags: [deploy-vega-rasa-nlp-sandbox-service]
     - role: deploy-vega-router-service
-      tags: deploy-vega-router-service
+      tags: [deploy-vega-router-service]
     - role: deploy-wat-sourcing-web-service
-      tags: deploy-wat-sourcing-web-service
+      tags: [deploy-wat-sourcing-web-service]
     - role: deploy-vega-console-service
-      tags: deploy-vega-console-service
+      tags: [deploy-vega-console-service]
     - role: deploy-wat-sourcing-service
-      tags: deploy-wat-sourcing-service
+      tags: [deploy-wat-sourcing-service]
     - role: deploy-vega-web-service
-      tags: deploy-vega-web-service
- 
+      tags: [deploy-vega-web-service]
