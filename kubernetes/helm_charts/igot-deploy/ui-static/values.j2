@@ -10,7 +10,7 @@ env:
 
 replicaCount: {{lms_replicacount|default(1)}}
 repository: {{ image_ui_static_fusion }}
-image_tag: {{sb_tag}}
+image_tag: {{image_tag}}
 resources:
   requests:
     cpu: {{lms_cpu_req|default('100m')}}
