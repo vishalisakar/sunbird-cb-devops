@@ -327,7 +327,8 @@ image_scoring_engine_service: scoring-engine-service
 image_sb_cb_ext_service: sb-cb-ext-service
 image_ui_mdo_igot: ui-mdo-igot
 image_ui_spv_igot: ui-spv-igot
-image_frac_backend_service: projecx-frac-service
+#image_frac_backend_service: projecx-frac-service
+image_frac_backend_service: frac_backend_service
 image_frac_web_service: frac-web-service
 image_frac_collab_service: frac-collab-service
 image_profanity_image_moderation_service: profanity-image-moderation
@@ -365,4 +366,3 @@ elasticsearch_ports_list: "{{ elasticsearch_http_hosts_list | map('regex_replace
 
 #####################bulk-upload-spv#########
 host_bulk_upload: /mydata/bulk_upload
-helm_file_location: /var/lib/jenkins/workspace/Deploy/dev/igot/ui-spv-igot/kubernetes/helm_charts/igot-deploy/ui-spv-igot
