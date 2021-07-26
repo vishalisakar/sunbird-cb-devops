@@ -74,7 +74,7 @@ LA_HOST_PROXY={{ var_ui_shared_la_host }}
 ILP_FP_PROXY={{ var_ui_shared_ilp_fp_host }}
 
 #Java service for notification : the port is not sure as 5825, will same as whichever port will be used to host the notification service.
-JAVA_API_BASE=http://10.177.157.30:5825
+JAVA_API_BASE=http://{{ java_api_base_ip }}:{{ java_api_base_port }}
 USER_PROFILE_API_BASE=http://up_eagle-user-profile:3008
 
 KEYCLOAK_ADMIN_PASSWORD={{ keycloak_password }}
@@ -162,3 +162,31 @@ X_CHANNEL_ID={{ x_channel_id }}
 
 CONTENT_SERVICE_API_BASE={{ content_service_api_base }}
 VM_LEARNING_SERVICE_URL=http://{{learningservice_ip}}:8080/learning-service
+
+
+#NXT WAT-SOURCING-BACKEND
+APP_WAT_BE_ENV=production
+APP_WAT_BE_NAME={{ service_wat_sourcing_service }}
+APP_WAT_BE_DEBUG=true
+APP_WAT_BE_PORT={{ service_wat_sourcing_port }}
+IP_WAT_BE_ADDRESS={{ wat_ip_address }}
+
+MYSQL_WAT_BE_HOST={{ wat_mysql_host }}
+MYSQL_WAT_BE_USER_NAME={{ wat_mysql_username }}
+MYSQL_WAT_BE_USER_PASSWORD={{ wat_mysql_password }}
+MYSQL_WAT_BE_DATABASE={{ wat_database }}
+MYSQL_WAT_BE_PORT= {{ mysql_wat_be_port }}
+
+
+#NXT WAT FRONTEND
+REACT_APP_WAT_API_URL=http://{{ service_wat_sourcing_service }}:{{ service_wat_sourcing_port }}
+
+#VEGA VARIABLES
+REACT_APP_VEGA_API_URL={{ vega_api_url }}
+REACT_APP_SANDBOX_URL={{ vega_sandbox_url }}
+REACT_APP_VEGA_ROUTER_URL={{ vega_router_url }}
+REACT_APP_VEGA_COMPILER_URL={{ vega_compiler_url }}
+REACT_APP_GIT_ACCESS_TOKEN={{ vega_git_access_token }}
+
+#UI_PROXY
+CORS_ENVIRONMENT={{ ui_proxy_cors_environment }}
