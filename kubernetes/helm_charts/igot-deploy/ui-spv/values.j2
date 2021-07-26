@@ -3,13 +3,13 @@
 namespace: {{ namespace }}
 imagepullsecrets: {{ imagepullsecrets }}
 dockerhub: {{ docker_hub_url }}
-portalname: {{ mdo_portal_url }}
+portalname: {{ spv_portal_url }}
 
 env:
   javaoptions: {{lms_java_mem_limit|default('-Xmx600m')}}
 
 replicaCount: {{lms_replicacount|default(1)}}
-repository: {{ image_ui_mdo_igot }}
+repository: {{ image_ui_spv_igot }}
 image_tag: {{ sb_tag }}
 resources:
   requests:
@@ -19,7 +19,7 @@ resources:
     cpu: {{lms_cpu_limit|default('1')}}
     memory: {{lms_mem_limit|default('1024Mi')}}
 network:
-  port: {{ service_ui_mdo_igot_port }}
+  port: {{ service_ui_spv_igot_port }}
   targetport: 3002
 strategy:
   type: RollingUpdate
@@ -39,7 +39,7 @@ hostconfig: |-
     "defaultLocale": "en",
     "defaultThemeClass": "theme-igot",
     "details": {
-        "appName": "MDO-iGOT"
+        "appName": "SPV-iGOT"
     },
     "disablePidCheck": false,
     "isContentDownloadAvailable": false,
@@ -229,7 +229,7 @@ siteconfig: |
   "defaultLocale": "",
   "defaultThemeClass": "theme-igot",
   "details": {
-    "appName": "MDO-iGOT"
+    "appName": "SPV-iGOT"
   },
   "disablePidCheck": true,
   "isContentDownloadAvailable": false,
@@ -467,11 +467,11 @@ siteconfig: |
         {
           "type": "featureButton",
           "config": {
-            "actionBtnId": "feature_mydashboard",
-            "toolTip": "My Dashboard",
+            "actionBtnId": "feature_dashboard_v2",
+            "toolTip": "Dashboard",
             "className": "fixtopMargin",
             "config": {
-              "actionBtnId": "feature_mydashboard",
+              "actionBtnId": "feature_dashboard_v2",
               "type": "card-mini",
               "hideTitle": true
             }
@@ -495,11 +495,7 @@ siteconfig: |
           "config": {
             "widgetType": "actionButton",
             "widgetSubType": "actionButtonProfile",
-            "widgetData": {
-              "disableViewProfile" : true,
-              "disableAllFeatures" : true,
-              "disableSettings" : true
-            },
+            "widgetData": {},
             "hideTitle": true
           }
         }
@@ -638,5 +634,5 @@ envjs: |-
     window["env"]["sitePath"] = 'mdo.{{ domain_name }}';
     window["env"]["debug"] = '';
     window["env"]["karmYogiPath"] = 'https://{{ domain_name }}'
-    window["env"]["cbpPath"] = 'https://cbc.{{ domain_name }}'
  })(this);
+

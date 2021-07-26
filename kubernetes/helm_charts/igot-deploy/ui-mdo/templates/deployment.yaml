@@ -22,11 +22,21 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
+      volumes:
+        - name: host-config
+          configMap:
+            name: mdo-host-config
+        - name: site-config
+          configMap:
+            name: mdo-site-config
+        - name: env-js
+          configMap:
+            name: mdo-env-js
       containers:
       - name: {{ .Chart.Name }}
-        image: "eagle-docker.tarento.com/{{ .Values.repository }}:{{ .Values.image_tag }}"
+        image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
@@ -35,7 +45,16 @@ spec:
         - configMapRef:
             name: {{ .Chart.Name }}-config
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: host-config
+          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/host.config.json
+          subPath: host.config.json
+        - name: site-config
+          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/site.config.json
+          subPath: site.config.json
+        - name: env-js
+          mountPath: /app/dist/www/en/assets/env.js
+          subPath: env.js
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}

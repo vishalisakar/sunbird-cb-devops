@@ -22,8 +22,19 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
+      volumes:
+        - name: host-config
+          configMap:
+            name: cbp-host-config
+        - name: site-config
+          configMap:
+            name: cbp-site-config
+        - name: env-js
+          configMap:
+            name: cbp-env-js
+
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -35,7 +46,17 @@ spec:
         - configMapRef:
             name: {{ .Chart.Name }}-config
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: host-config
+          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/host.config.json
+          subPath: host.config.json
+        - name: site-config
+          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/site.config.json
+          subPath: site.config.json
+        - name: env-js
+          mountPath: /app/dist/www/en/assets/env.js
+          subPath: env.js
+
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}

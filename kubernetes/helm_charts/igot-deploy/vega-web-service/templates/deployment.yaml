@@ -24,9 +24,13 @@ spec:
       imagePullSecrets:
       - name: regcred
 {{- end }}
+      volumes:
+        - name: env-js
+          configMap:
+            name: vega-web-portal-env-js
       containers:
       - name: {{ .Chart.Name }}
-        image: "eagle-docker.tarento.com/{{ .Values.repository }}:{{ .Values.image_tag }}"
+        image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
@@ -36,6 +40,10 @@ spec:
             name: {{ .Chart.Name }}-config
         resources:
 {{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: env-js
+          mountPath: /app/public/js/config.js
+          subPath: config.js        
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
@@ -65,10 +73,12 @@ metadata:
   labels:
     app: {{ .Chart.Name }}
 spec:
+  type: NodePort
   ports:
   - name: http-{{ .Chart.Name }}
     protocol: TCP
     port: {{ .Values.network.targetport }}
+    targetPort: 3000
   selector:
     app: {{ .Chart.Name }}
 

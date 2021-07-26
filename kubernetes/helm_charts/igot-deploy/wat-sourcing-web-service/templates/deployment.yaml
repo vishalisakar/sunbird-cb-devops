@@ -22,8 +22,12 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
+      volumes:
+        - name: env-js
+          configMap:
+            name: wat-frontend-env-js 
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -35,7 +39,10 @@ spec:
         - configMapRef:
             name: {{ .Chart.Name }}-config
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: env-js
+          mountPath: /app/build/config.js
+          subPath: config.js
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}

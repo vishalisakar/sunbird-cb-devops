@@ -10,7 +10,7 @@ env:
 
 replicaCount: {{lms_replicacount|default(1)}}
 repository: {{ image_wat_sourcing_web_service }}
-image_tag: {{ image_tag }}
+image_tag: {{ sb_tag }}
 resources:
   requests:
     cpu: {{lms_cpu_req|default('100m')}}
@@ -28,4 +28,7 @@ strategy:
 
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
-
+envjs: |-
+ window.env = {
+    REACT_APP_WAT_API_URL: 'https://{{react_app_wat_api_url}}'
+ }

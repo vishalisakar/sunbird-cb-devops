@@ -31,9 +31,12 @@ spec:
         - name: site-config
           configMap:
             name: site-config
+        - name: env-js
+          configMap:
+            name: env-js 
       containers:
       - name: {{ .Chart.Name }}
-        image: "eaglesb/{{ .Values.repository }}:{{ .Values.image_tag }}"
+        image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
@@ -49,6 +52,9 @@ spec:
         - name: site-config
           mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/site.config.json
           subPath: site.config.json
+        - name: env-js
+          mountPath: /app/dist/www/en/assets/env.js
+          subPath: env.js
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
