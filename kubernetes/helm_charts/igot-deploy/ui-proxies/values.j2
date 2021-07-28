@@ -9,7 +9,7 @@ env:
   javaoptions: {{lms_java_mem_limit|default('-Xmx600m')}}
 
 replicaCount: {{lms_replicacount|default(1)}}
-repository: sun-ui-proxies
+repository: {{ image_ui_proxies }}
 image_tag: {{image_tag}}
 resources:
   requests:
