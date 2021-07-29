@@ -38,3 +38,4 @@ servlet_multipart_max_file_size: 100Mb
 servlet_multipart_max_request_size: 100Mb
 
 neo4j_url: "bolt://{{ neo4j_host }}:{{ neo4j_port }}"
+kafka_ip: "http://{{ kafka_servers_list }}"
