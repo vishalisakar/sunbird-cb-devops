@@ -47,10 +47,10 @@ spec:
         resources:
         volumeMounts:
         - name: host-config
-          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/host.config.json
+          mountPath: /app/dist/www/en/assets/configurations/host.config.json
           subPath: host.config.json
         - name: site-config
-          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/site.config.json
+          mountPath: /app/dist/www/en/assets/configurations/site.config.json
           subPath: site.config.json
         - name: env-js
           mountPath: /app/dist/www/en/assets/env.js

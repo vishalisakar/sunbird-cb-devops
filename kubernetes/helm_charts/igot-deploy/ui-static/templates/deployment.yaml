@@ -34,6 +34,9 @@ spec:
         - name: env-js
           configMap:
             name: karmayogi-env-js
+        - name: apps-json
+          configMap:
+            name: karmayogi-apps-json
       containers:
       - name: {{ .Chart.Name }}
         image: {{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}
@@ -47,14 +50,17 @@ spec:
         resources:
         volumeMounts:
         - name: host-config
-          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/host.config.json
+          mountPath: /app/dist/www/en/assets/configurations/host.config.json
           subPath: host.config.json
         - name: site-config
-          mountPath: /app/dist/www/en/assets/configurations/{{ .Values.portalname }}/site.config.json
+          mountPath: /app/dist/www/en/assets/configurations/site.config.json
           subPath: site.config.json
         - name: env-js
           mountPath: /app/dist/www/en/assets/env.js
           subPath: env.js
+        - name: apps-json
+          mountPath: /app/dist/www/en/assets/configurations/feature/apps.json
+          subPath: apps.json
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
