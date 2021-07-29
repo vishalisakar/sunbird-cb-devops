@@ -75,15 +75,15 @@ hostconfig: |-
     ],
     "indexHtmlMeta": {
         "description": "iGOT 2.0 is a learning platform aimed at promoting capacity development among civil services. It is a solution built to be ‘fit for purpose’ to meet the exact learning needs of the civil services. iGOT 2.0 will help create impactful and relevant learning paths to achieve the outcomes relevant to their career aspirations.",
-        "appleTouchIcon180": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/apple-touch-icon.png",
-        "appleTouchIcon57": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/apple-touch-icon-57x57.png",
-        "icon16": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/favicon-16x16.png",
-        "icon32": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/favicon-32x32.png",
-        "maskIcon": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/safari-pinned-tab.svg",
-        "openSearchUrl": "/assets/assets/configurations/localhost_3000/manifest/open-search.xml",
+        "appleTouchIcon180": "/assets/assets/configurations/manifest/fav_icons/apple-touch-icon.png",
+        "appleTouchIcon57": "/assets/assets/configurations/manifest/fav_icons/apple-touch-icon-57x57.png",
+        "icon16": "/assets/assets/configurations/manifest/fav_icons/favicon-16x16.png",
+        "icon32": "/assets/assets/configurations/manifest/fav_icons/favicon-32x32.png",
+        "maskIcon": "/assets/assets/configurations/manifest/fav_icons/safari-pinned-tab.svg",
+        "openSearchUrl": "/assets/assets/configurations/manifest/open-search.xml",
         "themeColorMeta": "primary",
-        "webmanifest": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/site.webmanifest",
-        "xIcon": "/assets/assets/configurations/localhost_3000/manifest/fav_icons/favicon.ico"
+        "webmanifest": "/assets/assets/configurations/manifest/fav_icons/site.webmanifest",
+        "xIcon": "/assets/assets/configurations/manifest/fav_icons/favicon.ico"
     },
     "keycloak": {
         "bearerExcludedUrls": [
@@ -95,7 +95,7 @@ hostconfig: |-
         "clientId": "portal",
         "key": "ws-kc-token-storage",
         "realm": "sunbird",
-        "url": "https://igot-dev.in/auth"
+        "url": "https://{{ domain_name }}/auth"
     },
     "locals": [
         {
@@ -261,8 +261,8 @@ siteconfig: |
   ],
   "indexHtmlMeta": {
     "description": "iGOT 2.0 is a learning platform aimed at promoting capacity development among civil services. It is a solution built to be ‘fit for purpose’ to meet the exact learning needs of the civil services. iGOT 2.0 will help create impactful and relevant learning paths to achieve the outcomes relevant to their career aspirations.",
-    "webmanifest": "/assets/configurations/igot.idc.tarento.com/manifest/manifest.webmanifest",
-    "xIcon": "/assets/configurations/localhost_3000/manifest/favicon.ico"
+    "webmanifest": "/assets/configurations/manifest/manifest.webmanifest",
+    "xIcon": "/assets/configurations/manifest/favicon.ico"
   },
   "keycloak": {
     "bearerExcludedUrls": [
@@ -274,7 +274,7 @@ siteconfig: |
     "clientId": "portal",
     "key": "ws-kc-token-storage",
     "realm": "sunbird",
-    "url": "https://igot-sunbird.idc.tarento.com/auth"
+    "url": "https://{{ domain_name }}/auth"
   },
   "locals": [
     {
