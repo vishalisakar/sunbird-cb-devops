@@ -146,7 +146,7 @@ WORKFLOW_HANDLER_SERVICE_API_BASE={{ workflow_handler_service_api_base }}
 KEYCLOAK_SESSION_TTL=86,400,000
 KNOWLEDGE_MW_API_BASE=http://knowledge-mw-service:5000
 KONG_API_BASE=http://kong:8000
-SUNBIRD_PROXY_API_BASE={{ domain_name }}/api
+SUNBIRD_PROXY_API_BASE=https://{{ domain_name }}/api
 DISCUSSION_HUB_MIDDLEWARE=http://discussionsmw-service:3002
 
 SB_API_KEY={{ bearer_token }}
@@ -164,7 +164,6 @@ CONTENT_SERVICE_API_BASE={{ content_service_api_base }}
 VM_LEARNING_SERVICE_URL=http://{{learningservice_ip}}:8080/learning-service
 
 
-======
 #NXT WAT-SOURCING-BACKEND
 APP_WAT_BE_ENV=production
 APP_WAT_BE_NAME={{ service_wat_sourcing_service }}
@@ -176,7 +175,7 @@ MYSQL_WAT_BE_HOST={{ wat_mysql_host }}
 MYSQL_WAT_BE_USER_NAME={{ wat_mysql_username }}
 MYSQL_WAT_BE_USER_PASSWORD={{ wat_mysql_password }}
 MYSQL_WAT_BE_DATABASE={{ wat_database }}
-MYSQL_WAT_BE_PORT= {{ mysql_wat_be_port }}
+MYSQL_WAT_BE_PORT={{ mysql_wat_be_port }}
 
 
 #NXT WAT FRONTEND
@@ -191,7 +190,6 @@ REACT_APP_GIT_ACCESS_TOKEN={{ vega_git_access_token }}
 
 #UI_PROXY
 CORS_ENVIRONMENT={{ ui_proxy_cors_environment }}
-####################
-PORTAL_API_WHITELIST_CHECK: true
+PORTAL_API_WHITELIST_CHECK=true
 
 
