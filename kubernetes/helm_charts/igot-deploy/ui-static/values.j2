@@ -1400,7 +1400,7 @@ envjs: |-
     window["env"]["organisation"] = '{{ igot_organisation }}';
     window["env"]["framework"] = '{{ igot_framework }}'
     window["env"]["channelId"] = '{{ igot_channelid }}'
-    window["env"]["azureHost"] = '{{ igot_azurehost }}'
+    window["env"]["azureHost"] = 'https://{{ domain_name }}'
     window["env"]["contentHost"] = 'https://content.{{ domain_name }}'
     window["env"]["azureBucket"] = '{{ igot_azurebucket }}'
     window["env"]["azureOldHost"] = '{{ igot_azureoldhost }}'
