@@ -27,7 +27,7 @@ spec:
       volumes:
         - name: env-js
           configMap:
-            name: frac-web-portal-env-js 
+            name: frac-web-portal-env-js
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -41,7 +41,7 @@ spec:
         resources:
         volumeMounts:
         - name: env-js
-          mountPath: /app/public/config.js
+          mountPath: /app/build/config.js
           subPath: config.js
         ports:
         - containerPort: {{ .Values.network.port }}
@@ -78,4 +78,3 @@ spec:
     port: {{ .Values.network.targetport }}
   selector:
     app: {{ .Chart.Name }}
-
