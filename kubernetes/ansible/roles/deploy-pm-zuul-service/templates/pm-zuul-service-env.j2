@@ -16,7 +16,7 @@ zuul.routes.analytics.url=http://{{ service_pm_analytics_service }}:{{ service_p
 
 zuul.routes.form.path=/forms/**
 zuul.routes.form.stripPrefix=false
-zuul.routes.form.url=http://localhost:8099/
+zuul.routes.form.url=http://{{ service_pm_microsurvey_service }}:{{ service_pm_microsurvey_port }}/
 
 zuul.sensitiveHeaders=Cookie,Set-Cookie,x-user-info,auth-token
 
