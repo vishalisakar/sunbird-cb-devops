@@ -41,7 +41,7 @@ spec:
         resources:
         volumeMounts:
         - name: env-js
-          mountPath: /app/public/config.js
+          mountPath: /app/build/config.js
           subPath: config.js
         ports:
         - containerPort: {{ .Values.network.port }}
