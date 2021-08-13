@@ -22,7 +22,7 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: {{- if .Values.imagepullsecrets }}
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
       containers:
       - name: {{ .Chart.Name }}
