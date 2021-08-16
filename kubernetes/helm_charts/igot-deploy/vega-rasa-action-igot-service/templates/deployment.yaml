@@ -22,11 +22,11 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
       containers:
       - name: {{ .Chart.Name }}
-        image: eagle-docker.tarento.com/vega-rasa-action-igot-service:91649e5
+        image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
