@@ -22,7 +22,7 @@ spec:
     spec:
 {{- if .Values.imagepullsecrets }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.imagepullsecrets }}
 {{- end }}
       volumes:
 #        - name: {{ .Chart.Name }}-xml-config
@@ -30,7 +30,7 @@ spec:
 #            name: {{ .Chart.Name }}-xml-config
       containers:
       - name: {{ .Chart.Name }}
-        image: "eagle-docker.tarento.com/{{ .Values.repository }}:{{ .Values.image_tag }}"
+        image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
