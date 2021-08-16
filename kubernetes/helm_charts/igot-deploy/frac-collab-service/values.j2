@@ -29,14 +29,12 @@ strategy:
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
 envjs: |-
-  global.env = {
-  APP_COLLAB_ENV: {{ app_collab_env }},
-  APP_COLLAB_NAME: {{ app_collab_name }},
-  APP_COLLAB_PORT: {{ app_collab_port }},
-  APP_COLLAB_MONGO_DB: {{ app_collab_mongo_db }},
-  APP_COLLAB_MONGO_HOST: {{ app_collab_mongo_host }},
-  APP_COLLAB_MONGO_PORT: {{ app_collab_mongo_port }},
-  APP_COLLAB_MONGO_USER: {{ app_collab_mongo_user }},
-  APP_COLLAB_MONGO_PWD: {{ app_collab_mongo_pwd }},
-  APP_COLLAB_KEYCLOAK_URL: {{ app_collab_keycloak_url }}
- };
+ window.env = {
+    REACT_APP_FRAC_LOGIN_API_URL: "",
+    REACT_APP_FRAC_API_URL: 'https://{{react_app_frac_api_url}}',
+    REACT_APP_FRAC_KEYCLOAK_URL: 'https://{{react_app_frac_keycloak_url}}',
+    REACT_APP_FRAC_PROXY_URL: '{{react_app_frac_proxy_url}}',
+    REACT_APP_FRAC_SOCKET_URL: 'https://{{react_app_frac_socket_url}}',
+    REACT_APP_FRAC_COLLAB_NODE_URL: 'https://{{react_app_frac_collab_node_url}}',
+    REACT_APP_FRAC_USER_API_KEY: '{{react_app_frac_user_api_key}}'
+ }
