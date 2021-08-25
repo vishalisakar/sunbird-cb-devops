@@ -55,3 +55,14 @@ notification-url={{frac_notification_url}}
 auth-api-key={{frac_auth_api_key}}
 frac-url= {{frac_url}}
 
+
+spring.kafka.bootstrap.servers={{ kafka_servers_list }}
+spring.kafka.consumer.group-id=frac-group
+
+audit.eid=CB_AUDIT
+audit.edata.props=FRAC
+audit.ver=3.0
+audit.type=events
+audit.pdata.id=dev.FRac.portal
+audit.pdata.pid=FRac
+audit.pdata.ver=1.0
