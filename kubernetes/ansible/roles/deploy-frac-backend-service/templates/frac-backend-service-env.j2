@@ -44,7 +44,7 @@ elk.data.up=true
 image.source.aws=true
 image.source.attachment.aws=true
 auth-verification-url=https://{{ domain_name }}/auth/realms/{{ keycloak_realm_name }}/protocol/openid-connect/userinfo
-application.environment=production
+application.environment={{ env }}
 
 -------------------------------------
 elasticsearch.storage.service=frac-storage-service
