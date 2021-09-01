@@ -34,7 +34,7 @@ spec:
         - name: env-js
           configMap:
             name: mdo-env-js
-         - name: apps-json
+        - name: apps-json
           configMap:
             name: mdo-apps-json
       containers:
