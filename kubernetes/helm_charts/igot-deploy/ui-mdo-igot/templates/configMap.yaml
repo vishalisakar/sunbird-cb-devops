@@ -29,4 +29,13 @@ data:
 {{ .Values.envjs | indent 4 }}
 
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mdo-apps-json
+  namespace: {{ .Values.namespace }}
+data:
+  apps.json: |
+{{ .Values.appsjson | indent 4 }}
 
+---
