@@ -34,6 +34,9 @@ spec:
         - name: env-js
           configMap:
             name: env-js 
+        - name: apps-json
+          configMap:
+            name: cbc-apps-json
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -55,6 +58,9 @@ spec:
         - name: env-js
           mountPath: /app/dist/www/en/assets/env.js
           subPath: env.js
+        - name: apps-json
+          mountPath: /app/dist/www/en/assets/configurations/feature/apps.json
+          subPath: apps.json
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
