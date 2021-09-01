@@ -34,6 +34,9 @@ spec:
         - name: env-js
           configMap:
             name: cbp-env-js
+        - name: apps-json
+          configMap:
+            name: cbp-apps-json
 
       containers:
       - name: {{ .Chart.Name }}
@@ -56,6 +59,9 @@ spec:
         - name: env-js
           mountPath: /app/dist/www/en/assets/env.js
           subPath: env.js
+        - name: apps-json
+          mountPath: /app/dist/www/en/assets/configurations/feature/apps.json
+          subPath: apps.json
 
         ports:
         - containerPort: {{ .Values.network.port }}
