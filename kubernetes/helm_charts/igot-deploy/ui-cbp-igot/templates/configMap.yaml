@@ -30,3 +30,13 @@ data:
 
 ---
 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cbp-apps-json
+  namespace: {{ .Values.namespace }}
+data:
+  apps.json: |
+{{ .Values.appsjson | indent 4 }}
+
+---
