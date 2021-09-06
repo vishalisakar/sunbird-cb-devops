@@ -45,11 +45,11 @@ spec:
         resources:
         volumeMounts:
         - name: envnodejs
-          mountPath: /app/config.js
-          subPath: config.js
+          mountPath: /app/config.json
+          subPath: config.json
         - name: envgatsbyjs
-          mountPath: /app/app/config.js
-          subPath: config.js
+          mountPath: /app/app/config.json
+          subPath: config.json
 #{{ toYaml .Values.resources | indent 10 }}
         ports:
         - containerPort: {{ .Values.network.port }}
