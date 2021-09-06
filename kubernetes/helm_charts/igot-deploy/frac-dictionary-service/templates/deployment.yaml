@@ -44,9 +44,13 @@ spec:
             name: {{ .Chart.Name }}-config
         resources:
         volumeMounts:
-        - name: envnodejs
+        - name: envgatsbyjs
           mountPath: /app/config.json
           subPath: config.json
+        - name: envnodejs
+          mountPath: /app/app/config.json
+          subPath: config.json
+
         
 #{{ toYaml .Values.resources | indent 10 }}
         ports:
