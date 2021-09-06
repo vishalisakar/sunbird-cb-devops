@@ -46,7 +46,7 @@ spec:
         volumeMounts:
         - name: envnodejs
           mountPath: /app/config.js
-          subPath: config.js   
+          subPath: config.js
         - name: envgatsbyjs
           mountPath: /app/app/config.js
           subPath: config.js
