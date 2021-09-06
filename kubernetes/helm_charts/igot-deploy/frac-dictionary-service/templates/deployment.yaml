@@ -24,6 +24,14 @@ spec:
       imagePullSecrets:
       - name: {{ .Values.imagepullsecrets }}
 {{- end }}
+      volumes:
+        - name: envgatsbyjs
+          configMap:
+            name: frac-dict-gatsby-env-js
+        - name: envnodejs
+          configMap:
+            name: frac-dict-node-env-js
+            
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -35,7 +43,14 @@ spec:
         - configMapRef:
             name: {{ .Chart.Name }}-config
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: frac-dict-node-env-js
+          mountPath: /app/config.js
+          subPath: config.js
+        - name: frac-dict-gatsby-env-js
+          mountPath: /app/app/config.js
+          subPath: config.js
+#{{ toYaml .Values.resources | indent 10 }}
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
