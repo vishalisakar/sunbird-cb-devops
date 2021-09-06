@@ -36,8 +36,8 @@
       tags: [deploy-frac-web-service]
     - role: deploy-frac-collab-service
       tags: [deploy-frac-collab-service]
-    - role: frac-dictionary-service
-      tags: [frac-dictionary-service]    
+    - role: deploy-frac-dictionary-service
+      tags: [deploy-frac-dictionary-service]    
     - role: deploy-profanity-image-moderation-service
       tags: [deploy-profanity-image-moderation-service]
     - role: deploy-pm-web-service
