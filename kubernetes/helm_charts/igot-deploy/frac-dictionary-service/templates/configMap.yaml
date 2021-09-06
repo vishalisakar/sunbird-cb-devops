@@ -4,8 +4,8 @@ metadata:
   name: frac-dict-node-env-js
   namespace: {{ .Values.namespace }}
 data:
-  host.config.json: |
-{{ .Values.hostconfig | indent 4 }}
+ config.json: |
+{{ .Values.envnodejs | indent 4 }}
 
 ---
 apiVersion: v1
@@ -14,7 +14,7 @@ metadata:
   name: frac-dict-gatsby-env-js
   namespace: {{ .Values.namespace }}
 data:
-  site.config.json: |
-{{ .Values.siteconfig | indent 4 }}
+  config.json: |
+{{ .Values.envgatsbyjs | indent 4 }}
 
 ---
