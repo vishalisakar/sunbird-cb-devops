@@ -44,10 +44,10 @@ spec:
             name: {{ .Chart.Name }}-config
         resources:
         volumeMounts:
-        - name: frac-dict-node-env-js
+        - name: envnodejs
           mountPath: /app/config.js
-          subPath: config.js
-        - name: frac-dict-gatsby-env-js
+          subPath: config.js   
+        - name: envgatsbyjs
           mountPath: /app/app/config.js
           subPath: config.js
 #{{ toYaml .Values.resources | indent 10 }}
