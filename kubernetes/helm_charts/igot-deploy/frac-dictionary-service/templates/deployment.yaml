@@ -42,13 +42,8 @@ spec:
         envFrom:
         - configMapRef:
             name: {{ .Chart.Name }}-config
-        resources:
-        volumeMounts:
-        - name: envgatsbyjs
-          mountPath: /app/config.json
-          subPath: config.json
- 
-#{{ toYaml .Values.resources | indent 10 }}
+        resources: 
+{{ toYaml .Values.resources | indent 10 }}
         ports:
         - containerPort: {{ .Values.network.port }}
         {{- if .Values.healthcheck }}
