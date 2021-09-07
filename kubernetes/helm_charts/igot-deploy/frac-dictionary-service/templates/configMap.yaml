@@ -4,7 +4,7 @@ metadata:
   name: frac-dict-node-env-js
   namespace: {{ .Values.namespace }}
 data:
- config.json: |
+ config.js: |
 {{ .Values.envnodejs | indent 4 }}
 
 ---
@@ -14,7 +14,7 @@ metadata:
   name: frac-dict-gatsby-env-js
   namespace: {{ .Values.namespace }}
 data:
-  config.json: |
+  config.js: |
 {{ .Values.envgatsbyjs | indent 4 }}
 
 ---
