@@ -27,8 +27,7 @@ bot.config.file=/bot/config.yml
 bot.models=/bot/models/
 bot.results=/bot/results/
 bot.reports=/bot/reports/
-bot.baseReports=/home/varsha/Pictures/Dataset2/bot/results
-bot.histogram=/home/varsha/Desktop/Results/histogram.txt
+bot.histogram={{ vega_model_home }}/Results/histogram.txt
 bot.backup.path={{ vega_model_home }}/TrainingModels/thor_Backup/
 bot.server.ip={{bot_server_ip}}
 
@@ -43,16 +42,7 @@ bot.production.env=localhost
 bot.staging.env=localhost
 
 
-#docker
-path.docker.file=/home/varsha/Desktop/Results/Dockerfile
-docker.host.url=tcp://localhost:2375
-docker.bot.port=5005
-docker.router.url=http://localhost:4002
-docker.model.path=/home/ubuntu/models/
-docker.bot.start.message="bot has started"
-docker.container.path=/ubuntu/var/lib/docker/containers/
-docker.router.domains=/home/varsha/thor-assistant/Assistant/be/router/config/domain.js
-docker.router.domainsTemp=/home/varsha/thor-assistant/Assistant/be/router/config/domainTemp.js
+
 
 ##security
 bezkoder.app.jwtSecret={{bezkoder_app_jwtsecret}}
@@ -60,11 +50,11 @@ bezkoder.app.jwtExpirationMs=84600000
 jwt.refreshExpirationDateInMs=9000000
 
 # kubernetes service names
-vega.rasa.nlp.sandbox.service = vega-rasa-nlp-sandbox-service
-vega.rasa.action.sandbox.service = vega-rasa-action-sandbox-service
-vega.rasa.nlp.igot.service = vega-rasa-nlp-igot-service
-vega.rasa.action.igot.service = vega-rasa-action-igot-service
-vega.router.service = vega-router-service
-vega.compiler.service = vega-compiler-service
+vega.rasa.nlp.sandbox.service=vega-rasa-nlp-sandbox-service
+vega.rasa.action.sandbox.service=vega-rasa-action-sandbox-service
+vega.rasa.nlp.igot.service=vega-rasa-nlp-igot-service
+vega.rasa.action.igot.service=vega-rasa-action-igot-service
+vega.router.service=vega-router-service
+vega.compiler.service=vega-compiler-service
 
 
