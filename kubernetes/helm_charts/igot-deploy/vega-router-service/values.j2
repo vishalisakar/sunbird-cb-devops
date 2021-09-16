@@ -28,4 +28,14 @@ strategy:
 
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
+envjs: |-
+ global.env = {
+    APP_VEGA_ROUTER_ES_HOST: '{{ app_vega_router_es_host }}',
+    APP_VEGA_ROUTER_ES_USERNAME: '{{ app_vega_router_es_user }}',
+    APP_VEGA_ROUTER_ES_PASSWORD: '{{ app_vega_router_es_pwd }}',
+    APP_VEGA_ROUTER_REDIS_HOST: '{{ app_vega_router_redis_host }}',
+    APP_VEGA_ROUTER_REDIS_PORT: '{{ app_vega_router_redis_port }}',
+
+ }
+
 
