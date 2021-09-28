@@ -40,15 +40,15 @@ user.registry.ip=http://{{ network_alias_opensaber }}:{{ service_opensaber_port 
 user.registry.search.endpoint=/search
 
 notification.ip=http://{{ service_notification_service }}:{{ service_notification_service_port }}/
-notification.event.endpoint=/v1/notification/event
+notification.event.endpoint=/v1/notification/send/sync
 notification.template.targetUrl.value=https://{{ domain_name }}/app/network-v2/home
 notification.template.reciepient=author
 notification.template.sender=#from-connect-UUID
 notification.template.targetUrl=#targetUrl
 notification.template.status=#status
 
-notification.template.request=connect_request
-notification.template.response=connect_response
+notification.template.request=Received Connection request!
+notification.template.response=Received Connection response!
 notification.enabled=true
 
 kafka.bootstrapAddress={{ kafka_ip }}
