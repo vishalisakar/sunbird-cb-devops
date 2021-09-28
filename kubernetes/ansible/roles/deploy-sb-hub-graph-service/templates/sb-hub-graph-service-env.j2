@@ -39,7 +39,8 @@ es.profile.source.fields=photo,id,employmentDetails,personalDetails
 user.registry.ip=http://{{ network_alias_opensaber }}:{{ service_opensaber_port }}
 user.registry.search.endpoint=/search
 
-notification.ip=http://{{ service_notification_service }}:{{ service_notification_service_port }}/
+#notification.ip=http://{{ service_notification_service }}:{{ service_notification_service_port }}/
+notification.service.host=http://notification-service:9000
 notification.event.endpoint=/v1/notification/send/sync
 notification.template.targetUrl.value=https://{{ domain_name }}/app/network-v2/home
 notification.template.reciepient=author
