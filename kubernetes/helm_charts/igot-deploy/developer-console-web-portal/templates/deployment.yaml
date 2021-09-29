@@ -27,7 +27,7 @@ spec:
       volumes:
         - name: env-js
           configMap:
-            name: frac-web-portal-env-js
+            name: developer-consloe-web-portal-env-js
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
