@@ -9,7 +9,7 @@ env:
   javaoptions: {{lms_java_mem_limit|default('-Xmx600m')}}
 
 replicaCount: {{lms_replicacount|default(1)}}
-repository: {{ image_developer-console-web-portal }}
+repository: {{ image_developer_console_web_portal }}
 image_tag: {{image_tag}}
 resources:
   requests:
@@ -28,7 +28,7 @@ strategy:
 
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
-envjs: |
+envjs: |-
   window.env = {
     REACT_APP_DEV_CONSOLE_KEYCLOAK_URL: 'https://{{ react_app_dev_console_keycloak_url }}'
   }
