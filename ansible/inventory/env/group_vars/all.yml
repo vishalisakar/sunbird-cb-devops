@@ -88,7 +88,8 @@ service_wat_sourcing_web_service: wat-sourcing-web-service
 service_wat_sourcing_service: wat-sourcing-service
 service_vega_redis_service: vega-redis-service
 service_vega_web_service: vega-web-service
-
+service_developer_console_web_portal: developer-console-web-portal
+service_developer_console_service: developer-console-service
 
 # Ports
 service_antivirus_port: 3310
@@ -178,7 +179,8 @@ service_wat_sourcing_web_port: 5000
 service_wat_sourcing_port: 5000
 service_vega_redis_port: 6379
 service_vega_web_port: 3000
-
+service_developer_console_web_portal_port: 5000
+service_developer_console_service_port: 8080
 
 # Network alias names, so that one service can talk to another
 network_alias_content_service: private-content-service
@@ -271,8 +273,8 @@ network_alias_wat_sourcing_web_service: wat-sourcing-web-service
 network_alias_wat_sourcing_service: wat-sourcing-service
 network_alias_vega_redis_service: vega-redis-service
 network_alias_vega_web_service: vega-web-service
-
-
+network_alias_developer_console_web_portal: developer-console-web-portal
+network_alias_developer_console_service: developer-console-service
 
 # Image names, this is used by the service alone, but since we want to have all the images in one place, we are oncfiguring the images here
 image_ui_static: ui-static
@@ -356,7 +358,8 @@ image_wat_sourcing_web_service: wat-sourcing-web-service
 image_wat_sourcing_service: wat-sourcing-service
 image_vega_redis_service: tarentonxt/vega
 image_vega_web_service: vega-web-service
-
+image_developer_console_web_portal: developer-console-web-portal
+image_developer_console_service: developer-console-service
 
 health_end_point_sb_ext_service: "http://localhost:{{ service_sb_ext_port }}/v1/latest/terms/user"
 elasticsearch_hosts_list: "{{ elasticsearch_http_hosts_list | map('regex_replace','^(?P<host>.+):(?P<port>\\d+)$', '\\g<host>') | list | join (',') }}"
