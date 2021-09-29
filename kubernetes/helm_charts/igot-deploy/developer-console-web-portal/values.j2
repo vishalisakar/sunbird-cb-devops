@@ -29,6 +29,6 @@ strategy:
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
 envjs: |-
- window.env = {
-    REACT_APP_DEV_CONSOLE_KEYCLOAK_URL: 'https://{{react_app_dev_console_keycloak_url}}',
- }
+  window.env = {
+    REACT_APP_DEV_CONSOLE_KEYCLOAK_URL: 'https://{{ react_app_dev_console_keycloak_url }}'
+  }
