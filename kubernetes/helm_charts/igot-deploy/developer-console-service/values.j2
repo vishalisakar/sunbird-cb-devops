@@ -28,4 +28,15 @@ strategy:
 
 ui_proxies_bulk_upload: {{ host_bulk_upload }}
 
+envjs: |-
+ global.env = {
+   APP_DEV_CONSOLE_MYSQL_DB: "developer_console",
+   APP_DEV_CONSOLE_MYSQL_HOST: "{{ mysql_host }}",
+   APP_DEV_CONSOLE_MYSQL_PORT: "3306",
+   APP_DEV_CONSOLE_MYSQL_USER: "{{ mysql_username }}",
+   APP_DEV_CONSOLE_MYSQL_PWD: "{{ mysql_password }}",
+   APP_DEV_CONSOLE_PORT: 8080,
+   APP_DEV_CONSOLE_KEYCLOAK_URL: "{{ react_app_dev_console_keycloak_url }}",
+ }
+
 
