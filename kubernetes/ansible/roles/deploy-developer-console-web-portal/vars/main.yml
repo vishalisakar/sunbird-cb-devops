@@ -2,8 +2,8 @@
 # vars file for deploy-ui-static
 # For script
 release_name: "{{ network_alias_developer_console_web_portal }}"
-user_friendly_name: UI Frac-Web service
-template_compose_file_name: ui-frac-wev.j2
+user_friendly_name: UI developer-console-Web service
+template_compose_file_name: ui-developer-console-wev.j2
 template_env_file_name: "../../shared_files/templates/ui-shared-env.j2"
 compose_file_name: "{{ service_developer_console_web_portal }}.yml"
 env_file_name: "{{ service_developer_console_web_portal }}.env"
