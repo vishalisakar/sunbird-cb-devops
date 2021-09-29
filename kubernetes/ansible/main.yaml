@@ -76,7 +76,7 @@
       tags: [deploy-wat-sourcing-service]
     - role: deploy-vega-web-service
       tags: [deploy-vega-web-service]    
-     - role: deploy-developer-console-service
+    - role: deploy-developer-console-service
       tags: [deploy-developer-console-service]
     - role: deploy-developer-console-web-portal
       tags: [deploy-developer-console-web-portal]
