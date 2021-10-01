@@ -10,7 +10,7 @@ zuul.routes.ingest.path=/ingest/**
 zuul.routes.ingest.stripPrefix=false
 zuul.routes.ingest.url=http://{{ service_pm_ingestpipeline_service }}:{{ service_pm_ingestpipeline_port }}/
 
-zuul.routes.analytics.path=/dashboard/**
+zuul.routes.analytics.path=/dashboard/analytics/**
 zuul.routes.analytics.stripPrefix=false
 zuul.routes.analytics.url=http://{{ service_pm_analytics_service }}:{{ service_pm_analytics_port }}/
 
@@ -25,7 +25,7 @@ retail.auth-service-uri=user/_details?access_token=
 retail.user-info-header=x-user-info
 
 
-retail.open-endpoints-whitelist=/login,/dashboard/getDashboardConfig/Karmayogi/watdashboards,/dashboard/getChartV2/Karmayogi,/dashboard/getDashboardsForProfile/Karmayogi,/dashboard/getDashboardConfig/Karmayogi/competencies
+retail.open-endpoints-whitelist=/login,/dashboard/analytics/getDashboardConfig/Karmayogi/watdashboards,/dashboard/analytics/getChartV2/Karmayogi,/dashboard/analytics/getDashboardsForProfile/Karmayogi,/dashboard/analytics/getDashboardConfig/Karmayogi/competencies
 retail.mixed-mode-endpoints-whitelist=
 spring.http.multipart.max-file-size=100MB
 spring.http.multipart.max-request-size=100MB
