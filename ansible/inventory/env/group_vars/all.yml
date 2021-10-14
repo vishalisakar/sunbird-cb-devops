@@ -154,7 +154,7 @@ service_ui_spv_igot_port: 3044
 service_frac_backend_port: 8095
 service_frac_web_service_port: 5000
 service_frac_collab_service_port: 8080
-service_profanity_image_moderation_port: 80
+service_profanity_image_moderation_port: 5006
 service_pm_web_service_port: 5000
 service_pm_analytics_port: 8091
 service_pm_zuul_port: 8080
