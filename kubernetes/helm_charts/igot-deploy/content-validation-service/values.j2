@@ -19,7 +19,7 @@ resources:
     cpu: {{lms_cpu_limit|default('1')}}
     memory: {{lms_mem_limit|default('1024Mi')}}
 network:
-  port: 80
+  port: {{ service_content_validation_port }}
   targetport: {{ service_content_validation_port }}
 strategy:
   type: RollingUpdate
