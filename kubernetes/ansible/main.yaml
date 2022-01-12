@@ -80,3 +80,5 @@
       tags: [deploy-developer-console-service]
     - role: deploy-developer-console-web-portal
       tags: [deploy-developer-console-web-portal]
+    - role: deploy-profanity-moderator-admin-service
+      tags: [deploy-profanity-moderator-admin-service]
