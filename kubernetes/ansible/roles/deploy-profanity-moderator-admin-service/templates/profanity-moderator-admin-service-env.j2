@@ -12,7 +12,7 @@ spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.Str
 spring.kafka.consumer.value-deserializer=org.springframework.kafka.support.serializer.JsonDeserializer
 spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
 spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer
-spring.kafka.bootstrapAddress: {{ kafka_host }}:{{kafka_http_port }}
+spring.kafka.bootstrapAddress: {{ kafka_host }}:{{kafka_port }}
 spring.kafka.groupId=1
 spring.kafka.topicname.flagged: flagged
 spring.kafka.topicname.moderated: moderated
